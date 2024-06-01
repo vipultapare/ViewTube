@@ -1,9 +1,12 @@
+import Header from "./Components/Header";
+import Login from "./Components/Login";
 
 
 function App() {
   return (
     <div>
-     <h1>VIEW TUBE</h1>
+      <Header />
+     <Login />
     </div>
   );
 }
