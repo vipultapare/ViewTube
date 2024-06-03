@@ -1,7 +1,20 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
+import { checkValidData } from "../Utils/validate";
 
 const Login = () => {
   const [isSignUp, setSignUp] = useState(false);
+  const email = useRef(null);
+  const password = useRef(null);
+  const [errorMessage, setErrorMessage] = useState(null);
+
+  const validateData = () => {
+    const emailValue = email.current.value;
+    const passwordValue = password.current.value;
+    const message = checkValidData(emailValue, passwordValue);
+    setErrorMessage(message);
+    if (message) return;
+  };
+
   const handleSignUp = () => {
     setSignUp(!isSignUp);
   };
@@ -20,19 +33,28 @@ const Login = () => {
         )}
 
         <input
+          ref={email}
           type="text"
           placeholder="Enter Your Email"
           className="p-2 rounded-xl text-center"
         />
         <input
+          ref={password}
           type="password"
           placeholder="Enter Your Password"
           className="p-2 rounded-xl text-center"
         />
         <div className="flex flex-col justify-center mt-4">
-          <button className="p-2 bg-green-600 rounded-lg text-white font-bold hover:bg-red-500">
+          <button
+            className="p-2 bg-green-600 rounded-lg text-white font-bold hover:bg-red-500"
+            onClick={validateData}
+          >
             LOG IN
           </button>
+
+          <p className="text-center font-semibold text-red-900">
+            {errorMessage}
+          </p>
           <h4
             className="p-2 text-center cursor-pointer hover:text-white font-semibold"
             onClick={handleSignUp}
