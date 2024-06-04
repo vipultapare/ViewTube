@@ -6,6 +6,7 @@ import { onAuthStateChanged, signOut } from "firebase/auth";
 import { auth } from "../Utils/firebase";
 import { useNavigate } from "react-router-dom";
 import { addUser, removeUser } from "../Utils/ReduxStore/userSlice";
+import { toast } from "react-toastify";
 
 const Header = () => {
   const [isUserIconClick, setUserIconClick] = useState(false);
@@ -20,6 +21,17 @@ const Header = () => {
     signOut(auth)
       .then(() => {})
       .catch((error) => {});
+
+    toast.success("SIGN OUT SucessFully!", {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "dark",
+    });
   };
 
   useEffect(() => {

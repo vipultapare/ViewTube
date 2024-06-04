@@ -5,6 +5,7 @@ import {
   signInWithPopup,
   updateProfile,
 } from "firebase/auth";
+import { toast } from "react-toastify";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../Utils/firebase";
 import Header from "./Header";
@@ -71,6 +72,16 @@ const Login = () => {
           setErrorMessage(errorCode + " " + errorMessage);
         });
     }
+    toast.success("Login SucessFully!", {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "dark",
+    });
   };
 
   const handleSignUp = () => {
