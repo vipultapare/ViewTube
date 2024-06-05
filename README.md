@@ -12,6 +12,7 @@
 - use onAuthChange function provided by firebase
 - added the google signIn option.
 - Added Toster for Sign In and Sign Up using react tostify
+- Added the Sub Header and Side bar in the Project
 
 
 # Fire Base Connectivity (Netflix Clone video 1 (2:00 hr))

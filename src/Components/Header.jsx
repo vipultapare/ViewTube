@@ -50,7 +50,7 @@ const Header = () => {
   }, []);
 
   return (
-    <div className="bg-gradient-to-r from-cyan-500  to-blue-800 cursor-pointer  flex flex-row justify-between">
+    <div className="bg-gradient-to-r from-cyan-500  to-blue-800 cursor-pointer  flex flex-row justify-between shadow-2xl">
       <img
         src={tv}
         alt="LOGO"
