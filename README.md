@@ -13,6 +13,8 @@
 - added the google signIn option.
 - Added Toster for Sign In and Sign Up using react tostify
 - Added the Sub Header and Side bar in the Project
+- Make the hangBurger menu responsive using redux store
+- Added Youtube API for fetching the data. (Youtube Video 1 (1:30))
 
 
 # Fire Base Connectivity (Netflix Clone video 1 (2:00 hr))
@@ -31,3 +33,6 @@
 
 # tostify
 - npm i react-toastify
+
+
+//1 :44

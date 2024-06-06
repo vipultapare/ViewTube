@@ -1,12 +1,24 @@
 import React from "react";
 import menu from "../Assets/menu.png";
-import user from "../Assets/userIcon.png";
+import { useDispatch } from "react-redux";
+import { toggleMenu } from "../Utils/ReduxStore/appSlice";
 
 const Header2 = () => {
+  const dispatch = useDispatch();
+
+  const toggleMenuHandler = () => {
+    dispatch(toggleMenu());
+  };
+
   return (
     <div className="grid grid-flow-col p-5 m-2 bg-transparent shadow-lg border-b-4 border-blue-950 bg-gradient-to-bl from-cyan-600 to-cyan-400 rounded-full">
       <div className="col-span-4">
-        <img src={menu} alt="" className="w-12 h-12" />
+        <img
+          src={menu}
+          alt=""
+          className="w-12 h-12 cursor-pointer"
+          onClick={toggleMenuHandler}
+        />
       </div>
       <div className="col-span-10 flex  justify-center">
         <input
